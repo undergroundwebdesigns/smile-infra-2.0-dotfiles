@@ -1,0 +1,4 @@
+alias inf-live="cd $CODE_PATH/smile-infrastructure/infrastructure-live"
+alias inf-mod="cd $CODE_PATH/smile-infrastructure/infrastructure-modules"
+alias fr="foreman run"
+
