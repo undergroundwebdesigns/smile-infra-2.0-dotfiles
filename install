@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+MAC_PACKAGES="bash main tmux vim smile"
+SERVER_PACKAGES="bash main tmux vim"
+
+STOW_DIR=`dirname $0`
+
+pushd $STOW_DIR > /dev/null
+
+case $1 in
+  mac)
+    for package in $MAC_PACKAGES; do
+      stow -R $package &> /dev/null
+    done
+    ;;
+  server)
+    for package in $SERVER_PACKAGES; do
+      stow -R $package &> /dev/null
+    done
+    ;;
+  *)
+    echo "Invalid group"
+    ;;
+esac
+
+popd

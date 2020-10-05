@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+xcode-select -p 1>/dev/null
+if [ $? -eq 2 ]; then
+  xcode-select --install
+fi
+
+# Update App Store apps
+sudo softwareupdate -i -a
+
+# Update Homebrew (Cask) & packages
+brew update
+brew upgrade
+brew bundle --file=$DOTFILES/Brewfile
+brew cleanup
+
+rbenv install 2.6.5
+rbenv global 2.6.5 # Use ruby 2.6.5 globally by default.
+curl https://get.volta.sh | bash
+volta install node@12
+sudo gem install bundler
+sudo gem install foreman
