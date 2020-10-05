@@ -20,7 +20,7 @@ sh](http://pubs.opengroup.org/onlinepubs/009695399/utilities/sh.html) and
 On a mac laptop:
 
 ```sh
-curl -o- https://raw.githubusercontent.com//undergroundwebdesigns/smile-infra-2.0-dotfile/smaster/bootstrap | sh -s mac
+curl -o- https://raw.githubusercontent.com/undergroundwebdesigns/smile-infra-2.0-dotfiles/master/bootstrap | sh -s mac
 ```
 
 On a server:
