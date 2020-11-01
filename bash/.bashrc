@@ -8,9 +8,9 @@
 [ -z "$HOSTNAME" ] && export HOSTNAME=$(hostname)
 
 # Path setup for bash
-export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH:/usr/local/MacGPG2/bin"
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 # no duplicates in history
@@ -83,4 +83,4 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null
-gpg --card-status | head n1
+gpg --card-status | head -n1
