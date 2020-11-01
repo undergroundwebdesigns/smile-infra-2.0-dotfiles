@@ -60,8 +60,7 @@ Plug 'skwp/vim-rspec'
 Plug 'tpope/vim-haml'
 
 " Style
-Plug 'kelsin/blizzard-colors', { 'rtp': 'vim' }
-Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -70,6 +69,9 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " }}}
 
+syntax enable
+set background=dark
+colorscheme solarized
 
 " Basics {{{
 " Read the first 5 lines for modelines on file opening

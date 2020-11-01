@@ -24,5 +24,4 @@ sudo gem install bundler
 sudo gem install foreman
 sudo gem install rubocop
 
-. ~/.bashrc
 . ~/.bash_profile
