@@ -1,1 +1,1 @@
-eval "$(rbenv init -)"
+[ -f ~/.bashrc ] && . ~/.bashrc

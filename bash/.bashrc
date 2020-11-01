@@ -8,7 +8,10 @@
 [ -z "$HOSTNAME" ] && export HOSTNAME=$(hostname)
 
 # Path setup for bash
-export PATH="$HOME/bin:$VOLTA_HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:/usr/local/MacGPG2/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # no duplicates in history
 export HISTCONTROL=ignoredups
@@ -64,9 +67,8 @@ function __alexw_prompt {
 export PROMPT_COMMAND=__alexw_prompt
 
 # chruby
-if which brew > /dev/null; then
-  . `brew --prefix`/share/chruby/chruby.sh
-  . `brew --prefix`/share/chruby/auto.sh
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
 fi
 
 # NVM
