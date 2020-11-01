@@ -328,7 +328,7 @@ let NERDTreeHijackNetrw = 0
 let NERDTreeShowBookmarks = 1
 
 " Close after opening a file
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 
 " Use arrows in NERDTree
 if has("gui_running")
