@@ -25,5 +25,6 @@ volta install node@12
 sudo gem install bundler
 sudo gem install foreman
 sudo gem install rubocop
+sudo gem install tmuxinator
 
 . ~/.bash_profile
