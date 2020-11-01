@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+. ~/.env
+
 xcode-select -p 1>/dev/null
 if [ $? -eq 2 ]; then
   xcode-select --install
