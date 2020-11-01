@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MAC_PACKAGES="bash main tmux vim smile"
+MAC_PACKAGES="bash main tmux tmuxinator vim smile"
 SERVER_PACKAGES="bash main tmux vim"
 
 STOW_DIR=`dirname $0`
