@@ -69,10 +69,6 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 " }}}
 
-syntax enable
-set background=dark
-colorscheme solarized
-
 " Basics {{{
 " Read the first 5 lines for modelines on file opening
 set modeline
@@ -373,5 +369,6 @@ set go=
 " Fonts and Colors {{{
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h20
 let base16colorspace=256
-colorscheme base16-default-dark
+set background=dark
+colorscheme solarized
 " }}}
