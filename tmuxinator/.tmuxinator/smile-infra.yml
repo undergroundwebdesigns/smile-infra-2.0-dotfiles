@@ -1,0 +1,42 @@
+# ~/.tmuxinator/smile-infra.yml
+
+name: smile-infra
+root: <%= ENV['SMILE_CODE_PATH']%>
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - dependencies:
+      root: <%= ENV['SMILE_CODE_PATH'] %>/dev-env-services
+      layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
+      panes:
+        - cd <%= ENV['SMILE_CODE_PATH'] %>/dev-env-services && git pull && docker-compose build && docker-compose up
+        - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
+        -
+  - infra-live:
+      root: <%= ENV['SMILE_CODE_PATH'] %>/smile-infrastructure/infrastructure-live
+      layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
+      panes:
+        - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
+        - 
+        - 
+  - infra-modules:
+      root: <%= ENV['SMILE_CODE_PATH'] %>/smile-infrastructure/infrastructure-modules
+      layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
+      panes:
+        - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
+        - 
+        - 
