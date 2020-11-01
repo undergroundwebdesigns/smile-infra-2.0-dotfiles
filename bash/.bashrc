@@ -8,7 +8,7 @@
 [ -z "$HOSTNAME" ] && export HOSTNAME=$(hostname)
 
 # Path setup for bash
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$VOLTA_HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH"
 
 # no duplicates in history
 export HISTCONTROL=ignoredups
@@ -75,3 +75,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Don't check mail when opening terminal.
 unset MAILCHECK
+
+# Use gpg-agent in ssh-agent emulation mode and use it for SSH auth:
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye > /dev/null
+gpg --card-status | head n1
