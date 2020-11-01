@@ -2,6 +2,8 @@
 
 . ~/.env
 
+mkdir -p $SMILE_CODE_PATH
+
 xcode-select -p 1>/dev/null
 if [ $? -eq 2 ]; then
   xcode-select --install
