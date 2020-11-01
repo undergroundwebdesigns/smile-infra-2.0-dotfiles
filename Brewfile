@@ -1,4 +1,4 @@
-brew "alfred"
+cask "alfred"
 cask "ngrok"
 cask "1password"
 cask "1password-cli"
