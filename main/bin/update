@@ -19,6 +19,7 @@ brew bundle --file=$DOTFILES/Brewfile
 brew cleanup
 
 # Setup 1password and pull credentials:
+exec < /dev/tty
 op signin smile-io.1password.com alexw@smile.io
 eval $(op signin smile_io)
 
