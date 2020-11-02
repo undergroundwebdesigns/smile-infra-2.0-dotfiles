@@ -41,8 +41,6 @@ SIDEKIQ_PASSWORD=$(op get item inpp4sge3nbz3hc3ukob7g5p34 | jq '.details.section
 bundle config https://rubygems.pkg.github.com/smile-io $GH_USERNAME:$GH_TOKEN
 bundle config enterprise.contribsys.com $SIDEKIQ_USERNAME:$SIDEKIQ_PASSWORD
 
-sed -i "s/GH_USERNAME/$GH_USERNAME/" ~/.gemrc
-sed -i "s/GH_ACCESS_TOKEN/$GH_ACCESS_TOKEN/" ~/.gemrc
-
+gem sources -a "https://$GH_USERNAME:$GH_PASSWORD@rubygems.pkg.github.com/smile-io"
 
 . ~/.bash_profile

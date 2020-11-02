@@ -1,8 +1,0 @@
----
-:backtrace: false
-:bulk_threshold: 1000
-:sources:
-- https://rubygems.org/
-- https://GH_USERNAME:GH_ACCESS_TOKEN@rubygems.pkg.github.com/smile-io/
-:update_sources: true
-:verbose: true
