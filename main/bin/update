@@ -18,10 +18,15 @@ brew upgrade
 brew bundle --file=$DOTFILES/Brewfile
 brew cleanup
 
+# Setup 1password and pull credentials:
+op signin smile-io.1password.com alexw@smile.io
+eval $(op signin smile_io)
+
 rbenv install 2.6.5
 rbenv global 2.6.5 # Use ruby 2.6.5 globally by default.
 curl https://get.volta.sh | bash -s -- --skip-setup
 volta install node@12
+gem update --system
 sudo gem install bundler
 sudo gem install foreman
 sudo gem install rubocop
