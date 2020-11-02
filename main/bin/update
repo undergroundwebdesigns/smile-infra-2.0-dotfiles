@@ -32,15 +32,15 @@ sudo gem install tmuxinator
 exec < /dev/tty
 op signin smile-io.1password.com alexw@smile.io
 eval $(op signin smile_io)
-GH_USERNAME=$(op get item wgnmpjl22ndifgkuynu6obu6ne | jq '.details.fields[] | select(.designation=="username").value')
-GH_ACCESS_TOKEN=$(op get item Github | jq '.details.sections[] | select(.name=="Section_3A6E9CF0274A495B92DEA83B2CB9E6EB").fields[] | select(.n=="30083D9936A147E9AD5FCA3E37E893E0").v')
+GH_USERNAME=$(op get item wgnmpjl22ndifgkuynu6obu6ne | jq -r '.details.fields[] | select(.designation=="username").value')
+GH_ACCESS_TOKEN=$(op get item wgnmpjl22ndifgkuynu6obu6ne | jq -r '.details.sections[] | select(.name=="Section_3A6E9CF0274A495B92DEA83B2CB9E6EB").fields[] | select(.n=="30083D9936A147E9AD5FCA3E37E893E0").v')
 
-SIDEKIQ_USERNAME=$(op get item inpp4sge3nbz3hc3ukob7g5p34 | jq '.details.sections[] | select(.name=="Section_E4C66CB88D7D455BA2409411C1EFA067").fields[] | select(.n=="34A2FC19B02E45DE9DD7EB6401A2B9D3").v')
-SIDEKIQ_PASSWORD=$(op get item inpp4sge3nbz3hc3ukob7g5p34 | jq '.details.sections[] | select(.name=="Section_E4C66CB88D7D455BA2409411C1EFA067").fields[] | select(.n=="9F82DDD081834DAE8531795182E21B86").v')
+SIDEKIQ_USERNAME=$(op get item inpp4sge3nbz3hc3ukob7g5p34 | jq -r '.details.sections[] | select(.name=="Section_E4C66CB88D7D455BA2409411C1EFA067").fields[] | select(.n=="34A2FC19B02E45DE9DD7EB6401A2B9D3").v')
+SIDEKIQ_PASSWORD=$(op get item inpp4sge3nbz3hc3ukob7g5p34 | jq -r '.details.sections[] | select(.name=="Section_E4C66CB88D7D455BA2409411C1EFA067").fields[] | select(.n=="9F82DDD081834DAE8531795182E21B86").v')
 
-bundle config https://rubygems.pkg.github.com/smile-io $GH_USERNAME:$GH_TOKEN
+bundle config https://rubygems.pkg.github.com/smile-io $GH_USERNAME:$GH_ACCESS_TOKEN
 bundle config enterprise.contribsys.com $SIDEKIQ_USERNAME:$SIDEKIQ_PASSWORD
 
-gem sources -a "https://$GH_USERNAME:$GH_PASSWORD@rubygems.pkg.github.com/smile-io"
+gem sources -a "https://$GH_USERNAME:$GH_ACCESS_TOKEN@rubygems.pkg.github.com/smile-io"
 
 . ~/.bash_profile

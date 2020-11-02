@@ -17,9 +17,6 @@ export PATH="$HOME/bin:$PATH"
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
-# Check window size after commands
-shopt -s checkwinsize
-
 # Let Ctrl-O work ing terminals
 if [ -f /Applications ]; then
   stty discard undef
