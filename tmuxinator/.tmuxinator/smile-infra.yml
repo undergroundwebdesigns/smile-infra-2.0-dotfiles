@@ -20,21 +20,21 @@ root: <%= ENV['SMILE_CODE_PATH']%>
 
 windows:
   - dependencies:
-      root: <%= ENV['SMILE_CODE_PATH'] %>/dev-env-services
+      pre:  cd <%= ENV['SMILE_CODE_PATH'] %>/dev-env-services && clear
       layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
       panes:
-        - cd <%= ENV['SMILE_CODE_PATH'] %>/dev-env-services && git pull && docker-compose build && docker-compose up
+        - docker-compose build && docker-compose up
         - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
         -
   - infra-live:
-      root: <%= ENV['SMILE_CODE_PATH'] %>/smile-infrastructure/infrastructure-live
+      pre:  cd <%= ENV['SMILE_CODE_PATH'] %>/infrastructure-live && clear
       layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
       panes:
         - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
         - 
         - 
   - infra-modules:
-      root: <%= ENV['SMILE_CODE_PATH'] %>/smile-infrastructure/infrastructure-modules
+      pre:  cd <%= ENV['SMILE_CODE_PATH'] %>/infrastructure-modules && clear
       layout: fba1,270x59,0,0{135x59,0,0,0,134x59,136,0[134x29,136,0,1,134x29,136,30,2]}
       panes:
         - vim -c NERDTree -c "winc l" # Opens vim and automatically runs NERDTree, and changes to the empty file window.
