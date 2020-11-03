@@ -4,6 +4,7 @@ set -e
 . ~/.env
 
 mkdir -p $SMILE_CODE_PATH
+mkdir -p $HOME/.vim/swapfiles
 
 xcode-select -p 1>/dev/null
 if [ $? -eq 2 ]; then
@@ -28,6 +29,12 @@ sudo gem install bundler
 sudo gem install foreman
 sudo gem install rubocop
 sudo gem install tmuxinator
+
+if ! [ -d $HELM_HOME ]; then
+  helm init --client-only
+  mkdir -p $HELM_HOME/plugins
+  helm plugin install https://github.com/chartmuseum/helm-push.git
+fi
 
 # Setup 1password and pull credentials, if necessary:
 if ! grep -Fxq "BUNDLE_HTTPS://RUBYGEMS__PKG__GITHUB__COM/SMILE-IO/" ~/.bundle/config || ! grep -Fxq "BUNDLE_HTTPS://RUBYGEMS__PKG__GITHUB__COM/SMILE-IO/" ~/.gemrc; then

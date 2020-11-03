@@ -62,7 +62,7 @@ function __alexw_prompt {
     COLOR=$RED
   fi
 
-  export PS1="${BLUE}\w${RESET}\n${USERNAME}${COLOR}❯${RESET} "
+  export PS1="${GREEN}\t ${BLUE}\w${RESET}\n${USERNAME}${COLOR}❯${BLUE}\$(parse_git_branch)${RESET} "
   export PS2="${CYAN}❯${RESET} "
 }
 

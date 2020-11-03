@@ -146,6 +146,8 @@ set mousehide
 set showtabline=0
 " }}}
 
+set directory=$HOME/.vim/swapfiles//
+
 " Tabs {{{
 " Default to indents of 2 spaces
 set tabstop=2
