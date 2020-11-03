@@ -1,4 +1,4 @@
 Brewfile.lock.json
 .DS_Store
-smile/.smile/aws
-smile/.smile/kube
+smile/.smile/*
+!smile/.smile/smile-cli.yaml

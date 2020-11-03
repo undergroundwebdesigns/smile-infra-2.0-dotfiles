@@ -10,6 +10,7 @@
 # Path setup for bash
 export PATH="$PATH:/usr/local/MacGPG2/bin"
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+export PATH="/Volumes/Keybase/team/smile_devs/bin:$PATH"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
