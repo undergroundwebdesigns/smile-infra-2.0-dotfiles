@@ -32,6 +32,10 @@ if [ -f /etc/bash.bashrc ]; then
   . /etc/bash.bashrc
 fi
 
+if [ -f ~/.env.sensitive ]; then
+  . ~/.env.sensitive
+fi
+
 # Functions / Aliases
 [ -f ~/.functions ] && . ~/.functions
 [ -f ~/.aliases ] && . ~/.aliases

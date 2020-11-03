@@ -45,5 +45,9 @@ if ! grep -Fxq "BUNDLE_HTTPS://RUBYGEMS__PKG__GITHUB__COM/SMILE-IO/" ~/.bundle/c
   # the screen.
   gem sources -a "https://$GH_USERNAME:$GH_ACCESS_TOKEN@rubygems.pkg.github.com/smile-io/" >/dev/null 2>&1
 
+  touch ~/.env.sensitive
+  echo "export BUNDLE_ENTERPRISE__CONTRIBSYS__COM=${SIDEKIQ_USERNAME}:${SIDEKIQ_PASSWORD}" >> ~/.env.sensitive
+  echo "export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=${GH_USERNAME}:${GH_ACCESS_TOKEN}" >> ~/.env.sensitive
+
   . ~/.bash_profile
 fi

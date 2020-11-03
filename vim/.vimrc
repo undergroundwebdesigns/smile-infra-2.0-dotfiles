@@ -58,6 +58,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 Plug 'skwp/vim-rspec'
 Plug 'tpope/vim-haml'
+Plug 'hashivim/vim-terraform'
 
 " Style
 Plug 'altercation/vim-colors-solarized'
@@ -285,6 +286,10 @@ if has('autocmd')
 
   " Use markers to fold in vimrc
   autocmd FileType vim setlocal foldmethod=marker
+
+  autocmd FileType terraform setlocal foldmethod=syntax
+  autocmd FileType ruby setlocal foldmethod=syntax
+  autocmd FileType yaml setlocal foldmethod=syntax
 
   " No list characters in Quickfix buffer
   autocmd BufWinEnter Quickfix setlocal nolist
