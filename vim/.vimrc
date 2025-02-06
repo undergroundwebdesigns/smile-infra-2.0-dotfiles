@@ -59,6 +59,7 @@ Plug 'slim-template/vim-slim'
 Plug 'skwp/vim-rspec'
 Plug 'tpope/vim-haml'
 Plug 'hashivim/vim-terraform'
+Plug 'jvirtanen/vim-hcl'
 
 " Style
 Plug 'altercation/vim-colors-solarized'
@@ -69,6 +70,9 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 " }}}
+
+" Possible fix for vim hanging on typescript files?
+set re=2
 
 " Basics {{{
 " Read the first 5 lines for modelines on file opening
